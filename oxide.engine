@@ -122,7 +122,7 @@ function oxide_alter($hook, &$options, $theme) {
  * Initialize the Haml Parser
  */
 function _oxide_init() {
-  $mthaml_autoloader = 'sites/all/libraries/MtHaml/Autoloader.php';
+  $mthaml_autoloader = 'sites/all/libraries/MtHaml/lib/MtHaml/Autoloader.php';
   if( file_exists($mthaml_autoloader) ) {
     require_once $mthaml_autoloader;
     MtHaml\Autoloader::register();
