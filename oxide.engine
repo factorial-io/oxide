@@ -43,12 +43,13 @@ function oxide_theme($existing, $type, $theme, $path) {
  * Render a HAML template
  */
 function oxide_render_template($template, $variables) {
-
   // Retrieve options for the Haml parser
   $options = _oxide_get_haml_options();
 
   // Evaluate where the cached version of the parsed haml template should be
-  $base_theme = basename($variables['directory']);
+  $matches = array();
+  preg_match('/themes\/(.*)\//U', $template, $matches);
+  $base_theme = $matches[1];
   $template_cache = _oxide_cached_haml_path($template, $base_theme);
   $template_cache_fullpath = $template_cache['path'] . '/' . $template_cache['filename'];
 
