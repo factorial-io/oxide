@@ -172,9 +172,9 @@ function _oxide_cache_is_fresh($cached_file, $source_file) {
 function _oxide_default_haml_options() {
   $options = array(
     'format' => 'html5',
-    'enable_escaper' => FALSE,
+    'enable_escaper' => TRUE,
     'escape_html' => FALSE,
-    'escape_attrs' => FALSE,
+    'escape_attrs' => TRUE,
     'autoclose' => array('meta', 'img', 'link', 'br', 'hr', 'input', 'area', 'param', 'col', 'base'),
     'charset' => 'UTF-8',
     'enable_dynamic_attrs' => true,
