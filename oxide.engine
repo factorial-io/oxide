@@ -177,6 +177,7 @@ function _oxide_default_haml_options() {
     'escape_attrs' => FALSE,
     'autoclose' => array('meta', 'img', 'link', 'br', 'hr', 'input', 'area', 'param', 'col', 'base'),
     'charset' => 'UTF-8',
+    'enable_dynamic_attrs' => true,
   );
 
   return $options;
