@@ -76,6 +76,13 @@ function oxide_render_template($template, $variables) {
     }
 
   }
+  return _oxide_render_template_impl($template_cache_fullpath, $variables);
+}
+
+/**
+ * Helper func to render the actual template.
+ */
+function _oxide_render_template_impl($template_cache_fullpath, $variables) {
 
   // Extract Variables to a local namescape, needed for template rendering.
   extract($variables, EXTR_SKIP);
