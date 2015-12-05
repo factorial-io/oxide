@@ -4,6 +4,6 @@
     "type": "drupal-theme-engine",
     "license": "GPL-2.0+",
     "require": {
-      "mthaml/mthaml": "1.7-dev"
+      "mthaml/mthaml": "dev-master"
     }
 }
