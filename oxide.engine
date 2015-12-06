@@ -9,6 +9,11 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Extension\Extension;
 
+
+// TODO:
+// Need a better solution to include mthaml-code!
+require __DIR__ . '/../../../../vendor/autoload.php';
+
 /**
  * Implements hook_theme().
  */
@@ -62,11 +67,25 @@ function oxide_render_template($template_file, array $variables) {
     'debug_suffix' => '',
   ];
   try {
-    // TODO:
-    // $output['rendered_markup'] = $twig_service->loadTemplate($template_file)->render($variables);
-    $output['rendered_markup'] = 'GEHT';
+    $haml = new MtHaml\Environment('php', array(
+      'format' => 'html5',
+      'enable_escaper' => TRUE,
+      'escape_html' => FALSE,
+      'escape_attrs' => TRUE,
+      'autoclose' => array('meta', 'img', 'link', 'br', 'hr', 'input', 'area', 'param', 'col', 'base'),
+      'charset' => 'UTF-8',
+      'enable_dynamic_attrs' => true,
+    ));
+    $executor = new MtHaml\Support\Php\Executor($haml, array(
+      'cache' => file_directory_temp() . '/oxide',
+    ));
+
+    // Compiles and executes the HAML template, with variables given as second
+    // argument
+    $output['rendered_markup'] = $executor->render($template_file, $variables);
   }
   catch (Exception $e) {
+    print_r($e->getMessage());
     drupal_set_message($e->getMessage(), 'error');
   }
 
