@@ -1,9 +1,11 @@
 Oxide
 =====
 
-Adds haml-support to the twig-engine.
+Adds haml-support to Drupal and its twig-engine.
 
 The engine is based on original work of Kyle Cunningham: **[Peroxide project page](https://github.com/codeincarnate/peroxide)** and on original work of Antoine Lafontaine **[oxide project page](https://github.com/antoinelafontaine/oxide)**
+
+The drupal 8 version is completely rewritten and uses dependency-injection to register the haml parser with the twig-engine.
 
 
 Dependencies
