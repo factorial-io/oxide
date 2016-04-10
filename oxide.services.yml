@@ -1,0 +1,15 @@
+services:
+  oxide.mthaml:
+    class: MtHaml\Support\Twig\Extension
+    tags:
+      - { name: twig.extension }
+  twig.loader.haml:
+    class: MtHaml\Support\Twig\Loader
+    arguments: ['@oxide.environment', '@twig.loader.filesystem']
+    tags:
+      - { name: twig.loader, priority: 100 }
+
+  oxide.environment:
+    class: MtHaml\Environment
+    arguments: ['twig', { enable_escaper: false }]
+

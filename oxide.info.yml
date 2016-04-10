@@ -1,8 +1,5 @@
-type: theme_engine
-name: Oxide
-# core: 8.x
-# version: VERSION
-package: Core
+name: oxide
+description: "Integrates mthaml with drupal's twig."
+type: module
+core: 8.x
 
-version: '8.0.0'
-core: '8.x'
