@@ -1,5 +1,6 @@
 {
     "name": "factorial-io/oxide",
+    "license": "GPL-2.0+",
     "description": "Integrate MtHaml with drupal's twig.",
     "type": "drupal-module",
     "require": {
